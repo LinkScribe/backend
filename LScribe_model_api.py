@@ -48,7 +48,7 @@ async def predict(request: Request, data: LScribeModel):
     model_LS = request.app.state.model
     model = model_LS["LScribe-Model"]
     predictions = model.predict([model_input])
-    return  JSONResponse(content={"prediction": predictions,
-                                  "webText": model_input})
+    return  JSONResponse(content={"prediction": predictions})
+                                 # "webText": model_input})
 
 

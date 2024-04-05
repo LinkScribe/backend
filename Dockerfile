@@ -37,9 +37,9 @@ RUN apt-get install wkhtmltopdf -y
 COPY . .
 
 # Expose the port that the app listens on.
-EXPOSE 8000
+EXPOSE 8080
 
 
 # Run the application
-ENTRYPOINT ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+ENTRYPOINT ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
 

@@ -18,6 +18,7 @@ from model import LinkScribeModel, Framework
 # Backend routers 
 from LScribe_model_api import router as LScribe_model_router
 from webScrap import router as webInfo
+from fastapi.middleware.cors import CORSMiddleware
 # ------------------------
 
 """
@@ -52,6 +53,14 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(LScribe_model_router, prefix="/LScribe-Model")
 app.include_router(webInfo, prefix="/webInfo")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://34.16.170.210","http://localhost:4200"],  # Reemplaza con la URL de tu aplicación Angular
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def root():

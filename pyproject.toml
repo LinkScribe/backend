@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "linkscribebackend"
+name = "backend"
 version = "0.0.1"
 description = "LinkscribeBackend environment"
 authors = ["jdmunoz"]
@@ -14,6 +14,7 @@ scikit-learn = "^1.3.0"
 bs4 = "^0.0.2"
 requests = "^2.31.0"
 imgkit = "^1.2.3"
+wkhtmltopdf = "^0.2"
 
 
 
